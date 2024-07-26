@@ -1,4 +1,11 @@
 #!/usr/bin/python3
+"""
+This module contains a function to generate Pascal's Triangle of a given height.
+
+Functions:
+    pascal_triangle(n): Generates Pascal's Triangle with n rows.
+"""
+
 def pascal_triangle(n):
     """
     Generate Pascal's Triangle of height n.
@@ -26,3 +33,4 @@ def pascal_triangle(n):
         triangle.append(row)
 
     return triangle
+
