@@ -1,44 +1,34 @@
 #!/usr/bin/python3
+"""
+Module 0-minoperations
+Defines a method to calculate the minimum number of operations
+needed to obtain exactly n 'H' characters in a text file.
+"""
 
 
 def minOperations(n):
     """
-    Calculate the minimum number of operations needed to reach exactly n 'H
-    using only the Copy All and Paste operations.
+    Calculates the fewest number of operations needed to result
+    in exactly n H characters in the file.
+
+    Operations allowed:
+    - Copy All
+    - Paste
 
     Args:
         n (int): The target number of 'H' characters.
 
     Returns:
-        int: The minimum number of operations needed to achieve exactly n 'H
-             Returns 0 if it is impossible to achieve exactly n characters.
+        int: The minimum number of operations needed to achieve n 'H' ch.
+             Returns 0 if n is impossible to achieve.
     """
     if n <= 1:
-        return 0  # If n is 1 or less, it's either not possible or trivial
-
-    def get_factors(x):
-        """
-        Get all factors of a given number x.
-
-        Args:
-            x (int): The number to factorize.
-
-        Returns:
-            list: A sorted list of factors of x.
-        """
-        factors = []
-        for i in range(2, int(x**0.5) + 1):
-            if x % i == 0:
-                factors.append(i)
-                if i != x // i:
-                    factors.append(x // i)
-        factors.append(x)
-        return sorted(factors)
-
-    operations = float('inf')
-
-    for factor in get_factors(n):
-        ops = (n // factor) + (factor - 1)
-        operations = min(operations, ops)
-
+        return 0
+    operations = 0
+    factor = 2
+    while n > 1:
+        while n % factor == 0:
+            operations += factor
+            n //= factor
+        factor += 1
     return operations
