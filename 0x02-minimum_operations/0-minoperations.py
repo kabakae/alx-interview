@@ -1,15 +1,16 @@
 #!/usr/bin/python3
 
+
 def minOperations(n):
     """
-    Calculate the minimum number of operations needed to reach exactly n 'H' characters
+    Calculate the minimum number of operations needed to reach exactly n 'H
     using only the Copy All and Paste operations.
 
     Args:
         n (int): The target number of 'H' characters.
 
     Returns:
-        int: The minimum number of operations needed to achieve exactly n 'H' characters.
+        int: The minimum number of operations needed to achieve exactly n 'H
              Returns 0 if it is impossible to achieve exactly n characters.
     """
     if n <= 1:
