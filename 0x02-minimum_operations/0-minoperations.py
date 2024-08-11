@@ -34,11 +34,11 @@ def minOperations(n):
                     factors.append(x // i)
         factors.append(x)
         return sorted(factors)
-    
+
     operations = float('inf')
 
     for factor in get_factors(n):
         ops = (n // factor) + (factor - 1)
         operations = min(operations, ops)
-    
+
     return operations
