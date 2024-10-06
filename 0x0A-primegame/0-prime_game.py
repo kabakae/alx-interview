@@ -10,11 +10,15 @@ def isWinner(x, nums):
     """
     Determines the winner of the prime game between Maria and Ben
     :param x: number of rounds
-    :param nums: list of integers where each integer represents the set of n
+    :param nums: list of integeeger represents the set of numb, 2, ..., n}
     :return: the player that won the most rounds or None if it's a tie
     """
 
-    # Step 1: Precompute primes up to the of Eratosthenes
+    # Edge case: if x or nums is empty, or if all n values are 1, return None
+    if x <= 0 or not nums or all(n == 1 for n in nums):
+        return None
+
+    # Step 1: Pre up to the maximum number in nums using Sieve of Eratosthenes
     def sieve(n):
         sieve = [True] * (n + 1)
         sieve[0] = sieve[1] = False  # 0 and 1 are not primes
@@ -29,6 +33,8 @@ def isWinner(x, nums):
 
     # Step 2: Count the number of moves (prime removals) needed for each n
     def count_prime_moves(n):
+        if n < 2:
+            return 0  # No prime moves possible if n is less than 2
         multiples_removed = [False] * (n + 1)
         prime_moves = 0
 
