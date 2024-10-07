@@ -5,11 +5,12 @@ in a game where they take turns choosing prime numbers
 and removing them and their multiples.
 """
 
+
 def isWinner(x, nums):
     """
     Determines the winner of the prime game between Maria and Ben
     :param x: number of rounds
-    :param nums: list of integers representing the maximum number in each round
+    :param nums: list of integeeger represents the set of numb, 2, ..., n}
     :return: the player that won the most rounds or None if it's a tie
     """
 
@@ -17,7 +18,7 @@ def isWinner(x, nums):
     if x <= 0 or not nums or all(n == 1 for n in nums):
         return None
 
-    # Step 1: Precompute primes up to the maximum number in nums using Sieve of Eratosthenes
+    # Step 1: Pre up to the maximum number in nums using Sieve of Eratosthenes
     def sieve(n):
         sieve = [True] * (n + 1)
         sieve[0] = sieve[1] = False  # 0 and 1 are not primes
