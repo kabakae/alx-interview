@@ -8,17 +8,17 @@ and removing them and their multiples.
 
 def isWinner(x, nums):
     """
-    Determines the winner of the prime game between Maria and Ben
+    Determines the winner of the prime game between Maria and Ben.
     :param x: number of rounds
-    :param nums: list of integeeger represents the set of numb, 2, ..., n}
+    :param nums: list of integers representing the upper limit of numbers for each round
     :return: the player that won the most rounds or None if it's a tie
     """
 
-    # Edge case: if x or nums is empty, or if all n values are 1, return None
-    if x <= 0 or not nums or all(n == 1 for n in nums):
+    # Edge case: if x or nums is empty, return None
+    if x <= 0 or not nums:
         return None
 
-    # Step 1: Pre up to the maximum number in nums using Sieve of Eratosthenes
+    # Step 1: Precompute primes up to the maximum number in nums using Sieve of Eratosthenes
     def sieve(n):
         sieve = [True] * (n + 1)
         sieve[0] = sieve[1] = False  # 0 and 1 are not primes
