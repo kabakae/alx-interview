@@ -53,17 +53,15 @@ def isWinner(x, nums):
 
     for n in nums:
         moves = count_prime_moves(n)
-        print(f"Number {n}: Prime moves = {moves}")  # Debugging statement
         if moves % 2 == 0:
             ben_wins += 1  # Ben wins if the number of moves is even
         else:
             maria_wins += 1  # Maria wins if the number of moves is odd
 
     # Step 4: Return the winner based on most wins
-    print(f"Maria wins: {maria_wins}, Ben wins: {ben_wins}")  # Debugging statement
     if maria_wins > ben_wins:
         return "Maria"
     elif ben_wins > maria_wins:
         return "Ben"
     else:
-        return "Ben"  # Return Ben by default in case of a tie
+        return None
