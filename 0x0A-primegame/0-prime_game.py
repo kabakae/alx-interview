@@ -10,7 +10,7 @@ def isWinner(x, nums):
     """
     Determines the winner of the prime game between Maria and Ben.
     :param x: number of rounds
-    :param nums: list of integers representing the upper limit of numbers for each round
+    :param nums: list of integers representing the upper limit of numb
     :return: the player that won the most rounds or None if it's a tie
     """
 
@@ -18,7 +18,7 @@ def isWinner(x, nums):
     if x <= 0 or not nums:
         return None
 
-    # Step 1: Precompute primes up to the maximum number in nums using Sieve of Eratosthenes
+    # Step 1: Precompute primes up to the maximum number in nums using Siev
     def sieve(n):
         sieve = [True] * (n + 1)
         sieve[0] = sieve[1] = False  # 0 and 1 are not primes
